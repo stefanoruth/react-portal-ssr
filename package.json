@@ -1,14 +1,25 @@
 {
-	"name": "react-portal-ssr",
+	"name": "@stefanoruth/react-portal-ssr",
 	"version": "1.0.0",
 	"main": "dist/index.js",
 	"author": "Stefano Ruth <stefano6262@gmail.com>",
 	"license": "MIT",
+	"homepage": "https://github.com/stefanoruth/react-portal-ssr#readme",
+	"bugs": {
+		"url": "https://github.com/stefanoruth/react-portal-ssr/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/stefanoruth/react-portal-ssr.git"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"clean": "rm -rf dist/",
 		"build": "tsc"
 	},
+	"files": [
+		"dist"
+	],
 	"peerDependencies": {
 		"react": ">=16.0.0",
 		"react-dom": ">=16.0.0"
