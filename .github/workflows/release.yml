@@ -1,0 +1,32 @@
+name: Release
+
+on:
+    push:
+        tags:
+            - v*.*.*
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v2
+
+            - name: Use Node.js
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 12.x
+                  registry-url: https://registry.npmjs.org/
+                  scope: '@stefanoruth'
+
+            - name: Install
+              run: yarn install
+
+            - name: Build
+              run: yarn build
+
+            - name: Publish to NPM
+              run: npm publish --access public
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
