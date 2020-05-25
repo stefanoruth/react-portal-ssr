@@ -1,0 +1,38 @@
+{
+	"name": "react-portal-ssr",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"author": "Stefano Ruth <stefano6262@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"clean": "rm -rf dist/",
+		"build": "tsc"
+	},
+	"peerDependencies": {
+		"react": ">=16.0.0",
+		"react-dom": ">=16.0.0"
+	},
+	"dependencies": {
+		"cheerio": "^1.0.0-rc.3"
+	},
+	"devDependencies": {
+		"@types/cheerio": "^0.22.18",
+		"@types/react": "^16.9.35",
+		"@types/react-dom": "^16.9.8",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"typescript": "^3.9.3"
+	},
+	"prettier": {
+		"semi": false,
+		"useTabs": true,
+		"singleQuote": true,
+		"trailingComma": "es5",
+		"proseWrap": "always",
+		"jsxBracketSameLine": true,
+		"bracketSpacing": true,
+		"arrowParens": "avoid",
+		"printWidth": 120
+	}
+}
