@@ -1,19 +1,14 @@
 {
 	"compilerOptions": {
-		"target": "es5",
-		"module": "esnext",
-		"lib": ["ES2015", "DOM"],
+		"target": "esnext",
 		"jsx": "react",
-		"sourceMap": true,
 		"outDir": "./dist",
 		"rootDir": "./src",
-		"baseUrl": "./",
-		"removeComments": true,
 		"strict": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
 		"moduleResolution": "node",
-		"allowSyntheticDefaultImports": true,
+		"declaration": true,
+		"sourceMap": true,
 		"esModuleInterop": true
-	}
+	},
+	"exclude": ["example", "node_modules", "dist"]
 }

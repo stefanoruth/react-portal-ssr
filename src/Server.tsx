@@ -2,6 +2,7 @@ import * as React from 'react'
 import { load } from 'cheerio'
 import { renderToString } from 'react-dom/server'
 import { PortalChildren, PortalContext } from './Context'
+import { portalSelector } from './Common'
 
 export class PortalServer {
 	protected portals: PortalChildren[] = []
@@ -32,7 +33,7 @@ export class PortalServer {
 
 		result.forEach(({ content, selector }) => {
 			dom(renderToString(content))
-				.attr('data-react-universal-portal', '')
+				.attr(portalSelector, '')
 				.appendTo(selector as any)
 		})
 

@@ -1,13 +1,11 @@
 {
 	"compilerOptions": {
 		"target": "es5",
-		"lib": ["dom"],
-		"skipLibCheck": true,
+		"lib": ["dom", "esnext"],
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
 		"outDir": "./dist",
 		"rootDir": "./src",
-		"module": "commonjs",
 		"moduleResolution": "node",
 		"jsx": "react"
 	}

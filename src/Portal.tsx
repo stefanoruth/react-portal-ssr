@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { createPortal } from 'react-dom'
 import { PortalContext, PortalChildren } from './Context'
+import { portalSelector } from './Common'
 
 export const Portal: React.FunctionComponent<{ selector?: string }> = ({ children, selector }) => (
 	<PortalContext.Consumer>
@@ -28,7 +29,7 @@ export const Portal: React.FunctionComponent<{ selector?: string }> = ({ childre
 
 export function prepareClientPortals() {
 	if (typeof window !== 'undefined') {
-		Array.prototype.slice.call(document.querySelectorAll('[data-react-universal-portal]')).forEach((node: Element) => {
+		Array.prototype.slice.call(document.querySelectorAll(portalSelector)).forEach((node: Element) => {
 			node.remove()
 		})
 	}
