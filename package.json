@@ -1,6 +1,6 @@
 {
 	"name": "@stefanoruth/react-portal-ssr",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "dist/index.js",
 	"author": "Stefano Ruth <stefano6262@gmail.com>",
 	"license": "MIT",
