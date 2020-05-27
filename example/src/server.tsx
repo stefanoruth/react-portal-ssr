@@ -1,15 +1,17 @@
 import React from 'react'
 import express, { Request, Response, NextFunction } from 'express'
 import path from 'path'
-import fs from 'fs'
-import { App } from './App'
-
 import { renderToString, renderToStaticMarkup } from 'react-dom/server'
+import { App } from './App'
 
 const PORT = 3000
 const app = express()
 
+app.use(express.static(path.join(__dirname, '../dist/public')))
+
 app.use((req: Request, res: Response, next: NextFunction) => {
+	const content = renderToString(<App />)
+
 	return res.send(
 		'<!DOCTYPE html>' +
 			renderToStaticMarkup(
@@ -20,7 +22,9 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 						<title>React Portal SSR</title>
 					</head>
 					<body>
-						<div id="app">{renderToString(<App />)}</div>
+						<div id="app" dangerouslySetInnerHTML={{ __html: content }} />
+						<div id="portal" />
+						<script src="/main.js" />
 					</body>
 				</html>
 			)

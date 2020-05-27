@@ -4,17 +4,37 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
+		"clean": "rm -rf dist",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "tsc",
-		"dev": "tsc -w"
+		"start": "concurrently --kill-others \"webpack --mode development\" \"nodemon\""
 	},
 	"devDependencies": {
+		"@babel/core": "^7.9.6",
+		"@babel/plugin-proposal-class-properties": "^7.8.3",
+		"@babel/preset-env": "^7.9.6",
+		"@babel/preset-react": "^7.9.4",
+		"@babel/preset-typescript": "^7.9.0",
 		"@types/express": "^4.17.6",
 		"@types/react": "^16.9.35",
 		"@types/react-dom": "^16.9.8",
+		"babel-loader": "^8.1.0",
+		"concurrently": "^5.2.0",
+		"nodemon": "^2.0.4",
+		"typescript": "^3.9.3",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.11"
+	},
+	"dependencies": {
+		"@stefanoruth/react-portal-ssr": "file:..",
 		"express": "^4.17.1",
 		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
-		"typescript": "^3.9.3"
+		"react-dom": "^16.13.1"
+	},
+	"nodemonConfig": {
+		"watch": [
+			"src"
+		],
+		"exec": "ts-node ./src/server.tsx",
+		"ext": "ts,tsx"
 	}
 }
