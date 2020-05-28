@@ -1,51 +1,51 @@
 {
-	"name": "@stefanoruth/react-portal-ssr",
-	"version": "1.0.1",
-	"main": "dist/index.js",
-	"author": "Stefano Ruth <stefano6262@gmail.com>",
-	"license": "MIT",
-	"homepage": "https://github.com/stefanoruth/react-portal-ssr#readme",
-	"bugs": {
-		"url": "https://github.com/stefanoruth/react-portal-ssr/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/stefanoruth/react-portal-ssr.git"
-	},
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"clean": "rm -rf dist/",
-		"build": "tsc",
-		"dev": "tsc -w"
-	},
-	"files": [
-		"dist"
-	],
-	"peerDependencies": {
-		"react": ">=16.0.0",
-		"react-dom": ">=16.0.0"
-	},
-	"dependencies": {
-		"cheerio": "^1.0.0-rc.3"
-	},
-	"devDependencies": {
-		"@types/cheerio": "^0.22.18",
-		"@types/react": "^16.9.35",
-		"@types/react-dom": "^16.9.8",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
-		"typescript": "^3.9.3"
-	},
-	"prettier": {
-		"semi": false,
-		"useTabs": false,
-		"tabWidth": 4,
-		"singleQuote": true,
-		"trailingComma": "es5",
-		"proseWrap": "always",
-		"jsxBracketSameLine": true,
-		"bracketSpacing": true,
-		"arrowParens": "avoid",
-		"printWidth": 120
-	}
+    "name": "@stefanoruth/react-portal-ssr",
+    "version": "1.0.1",
+    "main": "dist/client.js",
+    "author": "Stefano Ruth <stefano6262@gmail.com>",
+    "license": "MIT",
+    "homepage": "https://github.com/stefanoruth/react-portal-ssr#readme",
+    "bugs": {
+        "url": "https://github.com/stefanoruth/react-portal-ssr/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/stefanoruth/react-portal-ssr.git"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "clean": "rm -rf dist/",
+        "build": "tsc",
+        "dev": "tsc -w"
+    },
+    "files": [
+        "dist"
+    ],
+    "peerDependencies": {
+        "react": ">=16.0.0",
+        "react-dom": ">=16.0.0"
+    },
+    "dependencies": {
+        "cheerio": "^1.0.0-rc.3"
+    },
+    "devDependencies": {
+        "@types/cheerio": "^0.22.18",
+        "@types/react": "^16.9.35",
+        "@types/react-dom": "^16.9.8",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "typescript": "^3.9.3"
+    },
+    "prettier": {
+        "semi": false,
+        "useTabs": false,
+        "tabWidth": 4,
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "proseWrap": "always",
+        "jsxBracketSameLine": true,
+        "bracketSpacing": true,
+        "arrowParens": "avoid",
+        "printWidth": 120
+    }
 }

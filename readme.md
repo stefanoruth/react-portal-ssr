@@ -8,9 +8,9 @@ Simple implementation of server side rendering of portals.
 
 ## Features
 
-- Server Side Rendered Portals
-- Simple API
-- Support Multiple Portals
+-   Server Side Rendered Portals
+-   Simple API
+-   Support Multiple Portals
 
 ## Installation
 
@@ -23,6 +23,19 @@ or
 ```shell
 npm install @stefanoruth/react-portal-ssr --save
 ```
+
+## API
+
+### `@stefanoruth/react-portal-ssr`
+
+-   `Portal`
+-   `prepareClientPortals`
+
+### `@stefanoruth/react-portal-ssr/server`
+
+-   `PortalServer`
+    -   `collectPortals`
+    -   `appendPortals`
 
 ## License
 
