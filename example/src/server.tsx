@@ -2,6 +2,7 @@ import React from 'react'
 import express, { Request, Response, NextFunction } from 'express'
 import path from 'path'
 import { renderToString, renderToStaticMarkup } from 'react-dom/server'
+import { PortalContext } from '@stefanoruth/react-portal-ssr'
 import { PortalServer } from '@stefanoruth/react-portal-ssr/server'
 import { App } from './App'
 
@@ -11,9 +12,11 @@ const app = express()
 app.use(express.static(path.join(__dirname, '../dist/public')))
 
 app.use((req: Request, res: Response, next: NextFunction) => {
-    const portal = new PortalServer()
+    const portal = new PortalServer(PortalContext)
 
     const content = renderToString(portal.collectPortals(<App />))
+
+    console.log(content, portal)
 
     const html = renderToStaticMarkup(
         <html lang="en">

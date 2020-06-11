@@ -6,8 +6,7 @@
         "resolveJsonModule": true,
         "strict": true,
         "esModuleInterop": true,
-        "declaration": true,
-        "declarationDir": "dist/types"
+        "declaration": true
     },
     "include": ["src/**/*"]
 }

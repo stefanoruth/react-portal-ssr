@@ -1,9 +1,9 @@
 {
     "name": "@stefanoruth/react-portal-ssr",
     "version": "1.0.4",
-    "main": "dist/client.cjs.js",
-    "module": "dist/client.esm.js",
-    "types": "dist/types/client.d.ts",
+    "main": "dist/client.js",
+    "module": "dist/client.js",
+    "types": "dist/client.d.ts",
     "author": "Stefano Ruth <stefano6262@gmail.com>",
     "license": "MIT",
     "homepage": "https://github.com/stefanoruth/react-portal-ssr#readme",
@@ -18,7 +18,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "clean": "rm -rf dist/",
         "build": "yarn clean && rollup -c rollup.config.ts",
-        "dev": "yarn build --watch"
+        "dev": "yarn clean && yarn build --watch"
     },
     "files": [
         "dist"
@@ -32,6 +32,7 @@
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^13.0.0",
+        "@rollup/plugin-multi-entry": "^3.0.1",
         "@types/cheerio": "^0.22.18",
         "@types/react": "^16.9.35",
         "@types/react-dom": "^16.9.8",
