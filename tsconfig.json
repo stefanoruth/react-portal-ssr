@@ -1,14 +1,13 @@
 {
-	"compilerOptions": {
-		"target": "esnext",
-		"jsx": "react",
-		"outDir": "./dist",
-		"rootDir": "./src",
-		"strict": true,
-		"moduleResolution": "node",
-		"declaration": true,
-		"sourceMap": true,
-		"esModuleInterop": true
-	},
-	"exclude": ["example", "node_modules", "dist"]
+    "compilerOptions": {
+        "target": "esnext",
+        "moduleResolution": "node",
+        "jsx": "react",
+        "resolveJsonModule": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "declaration": true,
+        "declarationDir": "dist/types"
+    },
+    "include": ["src/**/*"]
 }
