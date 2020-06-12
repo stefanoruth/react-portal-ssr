@@ -6,6 +6,7 @@
     "scripts": {
         "clean": "rm -rf dist",
         "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "yarn clean && webpack --mode production",
         "start": "concurrently --kill-others \"webpack --mode development --watch\" \"nodemon\""
     },
     "devDependencies": {

@@ -16,8 +16,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
     const content = renderToString(portal.collectPortals(<App />))
 
-    console.log(content, portal)
-
     const html = renderToStaticMarkup(
         <html lang="en">
             <head>
