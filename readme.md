@@ -30,10 +30,11 @@ npm install @stefanoruth/react-portal-ssr --save
 
 -   `Portal`
 -   `prepareClientPortals`
+-   `PortalContext`
 
 ### `@stefanoruth/react-portal-ssr/server`
 
--   `PortalServer`
+-   `PortalServer(PortalContext)`
     -   `collectPortals`
     -   `appendPortals`
 
