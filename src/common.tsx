@@ -8,4 +8,4 @@ export type PortalChildren = {
 export const PortalContext = React.createContext<PortalChildren[]>([])
 PortalContext.displayName = 'PortalContext'
 
-export const portalSelector = '[data-react-universal-portal]'
+export const portalSelector = 'data-react-universal-portal'
