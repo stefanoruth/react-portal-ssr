@@ -3,8 +3,6 @@ import typescript from 'rollup-plugin-typescript2'
 import bundleSize from 'rollup-plugin-bundle-size'
 import { getBabelOutputPlugin } from '@rollup/plugin-babel'
 
-const plugins = [commonjs(), typescript(), bundleSize()]
-
 export default [
     {
         input: 'src/client.tsx',
@@ -16,7 +14,8 @@ export default [
         ],
         external: ['react', 'react-dom'],
         plugins: [
-            ...plugins,
+            commonjs(),
+            typescript(),
             getBabelOutputPlugin({
                 presets: [
                     [
@@ -31,6 +30,7 @@ export default [
                 ],
                 plugins: ['@babel/plugin-transform-modules-umd'],
             }),
+            bundleSize(),
         ],
     },
     {
@@ -42,6 +42,6 @@ export default [
             },
         ],
         external: ['react', 'react-dom', 'cheerio', 'react-dom/server'],
-        plugins,
+        plugins: [commonjs(), typescript()],
     },
 ]
