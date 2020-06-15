@@ -1,6 +1,9 @@
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from 'rollup-plugin-typescript2'
 import bundleSize from 'rollup-plugin-bundle-size'
+import { getBabelOutputPlugin } from '@rollup/plugin-babel'
+
+const plugins = [commonjs(), typescript(), bundleSize()]
 
 export default [
     {
@@ -12,7 +15,23 @@ export default [
             },
         ],
         external: ['react', 'react-dom'],
-        plugins: [commonjs(), typescript(), bundleSize()],
+        plugins: [
+            ...plugins,
+            getBabelOutputPlugin({
+                presets: [
+                    [
+                        '@babel/preset-env',
+                        {
+                            modules: 'umd',
+                            targets: {
+                                browsers: 'ie >= 11',
+                            },
+                        },
+                    ],
+                ],
+                plugins: ['@babel/plugin-transform-modules-umd'],
+            }),
+        ],
     },
     {
         input: 'src/server.tsx',
@@ -23,6 +42,6 @@ export default [
             },
         ],
         external: ['react', 'react-dom', 'cheerio', 'react-dom/server'],
-        plugins: [commonjs(), typescript(), bundleSize()],
+        plugins,
     },
 ]
