@@ -1,6 +1,6 @@
 {
     "name": "@stefanoruth/react-portal-ssr",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "main": "dist/client.js",
     "module": "dist/client.js",
     "types": "dist/client.d.ts",
