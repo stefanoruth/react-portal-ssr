@@ -28,7 +28,6 @@ export default [
                         },
                     ],
                 ],
-                plugins: ['@babel/plugin-transform-modules-umd'],
             }),
             bundleSize(),
         ],
@@ -42,6 +41,6 @@ export default [
             },
         ],
         external: ['react', 'react-dom', 'cheerio', 'react-dom/server'],
-        plugins: [commonjs(), typescript()],
+        plugins: [commonjs(), typescript(), bundleSize()],
     },
 ]
