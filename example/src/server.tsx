@@ -4,6 +4,7 @@ import path from 'path'
 import { renderToString, renderToStaticMarkup } from 'react-dom/server'
 import { PortalContext } from '@stefanoruth/react-portal-ssr'
 import { PortalServer } from '@stefanoruth/react-portal-ssr/server'
+import { StaticRouter } from 'react-router-dom'
 import { App } from './App'
 
 const PORT = 3000
@@ -14,7 +15,13 @@ app.use(express.static(path.join(__dirname, '../dist/public')))
 app.use((req: Request, res: Response, next: NextFunction) => {
     const portal = new PortalServer(PortalContext)
 
-    const content = renderToString(portal.collectPortals(<App />))
+    const content = renderToString(
+        portal.collectPortals(
+            <StaticRouter location={req.url} context={{}}>
+                <App />
+            </StaticRouter>
+        )
+    )
 
     const html = renderToStaticMarkup(
         <html lang="en">

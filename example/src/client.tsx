@@ -2,9 +2,18 @@ import React from 'react'
 import { hydrate } from 'react-dom'
 import { App } from './App'
 import { prepareClientPortals } from '@stefanoruth/react-portal-ssr'
+import { BrowserRouter } from 'react-router-dom'
 
-prepareClientPortals()
+setTimeout(() => {
+    prepareClientPortals()
+}, 0)
 
-hydrate(<App />, document.getElementById('app'), () => {
-    console.log('Hydrate')
-})
+hydrate(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
+    document.getElementById('app'),
+    () => {
+        console.log('Hydrate')
+    }
+)
