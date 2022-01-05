@@ -37,7 +37,7 @@ export default [
         output: [
             {
                 file: 'dist/server.js',
-                format: 'es',
+                format: 'cjs',
             },
         ],
         external: ['react', 'react-dom', 'cheerio', 'react-dom/server'],
